@@ -1,0 +1,28 @@
+public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {
+        List<Map.Entry<K, V>> list = new ArrayList<>(map.entrySet());
+        list.sort(Map.Entry.comparingByValue());
+
+        Map<K, V> result = new LinkedHashMap<>();
+        for (Map.Entry<K, V> entry : list) {
+            result.put(entry.getKey(), entry.getValue());
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        HashMap<String, Double> map = new HashMap<String, Double>();
+        Map<String, Double> nmap = new HashMap<>();
+        map.put("B", 67.4);
+        map.put("A", 99.5);
+        map.put("D", 67.3);
+        map.put("C", 67.4);
+        nmap = sortByValue(map);
+        for (String s : nmap.keySet()) {
+            System.out.println(s+";"+nmap.get(s));
+        }
+        System.out.println("");
+        for (String s : map.keySet()) {
+            System.out.println(s+";"+map.get(s));
+        }
+    }
