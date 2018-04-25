@@ -1,0 +1,2 @@
+Map<String,CouponInfo> parties = new HashMap<>();
+        parties.values().stream().mapToLong(v->Long.parseLong(v.getBalance())).sum();
