@@ -1,0 +1,7 @@
+nvoiceItems.stream()
+    .map(Item::getItemValue)
+    .reduce(BigDecimal.ZERO, BigDecimal::add)
+
+item:list 对象
+getItemValue:对象方法
+add:BigDecimal 自带方法，需传BigDecimal类型参数，getItemValue返回BigDecimal类型数据
