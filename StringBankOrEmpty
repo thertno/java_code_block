@@ -1,0 +1,12 @@
+StringUtils.isBlank(null)      = true
+StringUtils.isBlank("")        = true  
+StringUtils.isBlank(" ")       = true  
+StringUtils.isBlank("bob")     = false  
+StringUtils.isBlank("  bob  ") = false
+
+
+StringUtils.isEmpty(null)      = true
+StringUtils.isEmpty("")        = true  
+StringUtils.isEmpty(" ")       = false  
+StringUtils.isEmpty("bob")     = false  
+StringUtils.isEmpty("  bob  ") = false
